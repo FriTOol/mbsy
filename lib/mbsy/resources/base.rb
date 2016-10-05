@@ -21,7 +21,7 @@ module Mbsy
     end
  
     def self.call(method, params = {})
-      response = JSON.parse(self.get(api_url(method), :query => params).body)['response']
+      response = JSON.parse(self.get(api_url(method), {:query => params, verify: false}).body)['response']
       case response['code']
       when '200' # Nothing to do here...
       when '400'
