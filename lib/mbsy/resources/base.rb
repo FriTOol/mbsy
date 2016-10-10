@@ -9,7 +9,7 @@ module Mbsy
   class Base
     include HTTParty
     format :json
-    default_timeout 30
+    default_timeout 60
     default_params :output => 'json'
 
     def self.element_name
